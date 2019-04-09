@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>天狮产业园</title>
+	<link rel="stylesheet" href="./css/swiper.min.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<script>
+		; (function (win, doc) {
+			function change() {
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
+			}
+
+			win.addEventListener('resize', change, false);
+			win.addEventListener('DOMContentLoaded', change, false);
+			change();
+		})(window, document);
+	</script>
+</head>
+
+<body>
+	
+	<div class="map">
+		<div class="btn">
+			<img src="img/krpano_close.png" id="mapClose">
+		</div>
+		<div class="map-content">
+			<img src="img/map.jpg" alt="">
+
+			<!---坐标点--->
+			<div class="coordinate coord1" data-idx="0" id="fan0"><span class="label">大门</span><div class="default"><span class="fan" ></span></div><span class="spot"></span></div>
+
+			<div class="coordinate coord3" data-idx="1" id="fan1"><span class="label">宴会中心</span><div class="default"><span class="fan"></span></div><span class="spot"></span></div>
+			
+			<div class="coordinate coord2" data-idx="2" id="fan2"><span class="label">泰济生医院</span><div class="default"><span class="fan"></span></div><span class="spot"></span></div>
+			
+			<div class="coordinate coord4" data-idx="3" id="fan3"><span class="label">体验中心</span><div class="default"><span class="fan"></span></div><span class="spot"></span></div>
+			
+			<div class="coordinate coord5" data-idx="4" id="fan4"><span class="label">会议中心</span><div class="default"><span class="fan"></span></div><span class="spot"></span></div>
+			
+			<div class="coordinate coord6" data-idx="5" id="fan5"><span class="label">办公大楼</span><div class="default"><span class="fan"></span></div><span class="spot"></span></div>
+			
+		</div>
+		
+	</div>
+
+	
+	
+
+	<!-- Swiper -->
+	
+	<p id="viewText"></p>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			
+		</div>
+	</div>
+
+	<style>
+	.coordinate .fan{
+		/* display: none; */
+		/* transform: rotate(120deg); */
+		transform-origin: center;
+		left: -22px;
+    top: -6px;
+	}
+
+
+	#fan0 .default{
+		width: 28px;
+		height: 35px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		
+		/* 1、 修改角度 */
+		transform: rotate(10deg); 
+
+		
+		transform-origin: center;
+	}
+	/* 2、调整中心点 */
+	#fan0 .fan{
+		left: -13px;
+		top: -5px
+	}
+
+	#fan1 .default{
+		width: 28px;
+		height: 35px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: rotate(-320deg);
+		transform-origin: center;
+	}
+
+	#fan1 .fan{
+		left: -9px;
+		top: -7px
+	}
+		
+			#fan2 .default{
+		width: 28px;
+		height: 35px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: rotate(-320deg);
+		transform-origin: center;
+	}
+	#fan2 .fan{
+		left: -9px;
+    top: -7px;
+	}
+
+			#fan3 .default{
+		width: 28px;
+		height: 35px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: rotate(-90deg);
+		transform-origin: center;
+	}
+		#fan3 .fan{
+		left: -24px;
+    top: -11px;
+	}
+		
+#fan4 .default{
+		width: 28px;
+		height: 35px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: rotate(-90deg);
+		transform-origin: center;
+	}
+		#fan4 .fan{
+		left: -24px;
+    top: -11px;
+	}
+		#fan5 .default{
+		width: 28px;
+		height: 35px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: rotate(-10deg);
+		transform-origin: center;
+	}
+		#fan5 .fan{
+		left: -15px;
+		top: -4px
+	}
+	</style>
+	
+	<script src="./js/jquery.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/jquery.pano.auto.js?asd=3"></script>
+	<script src="js/data.js?v=123"></script>
+	<script type="text/javascript">
+
+
+		
+
+		$(function () {
+			
+
+			var html = "";
+			var swiperList = "";
+			for(var i=0;i<sphere.length;i++){
+				// html+= '<div class="pano pano'+i+'"><span class="describe" style="left:'+sphere[i].describePos.left+';top:'+sphere[i].describePos.top+';"></span><div class="controls"><a href="#" class="left">&laquo;</a><a href="#" class="right">&raquo;</a></div></div>'
+				html+= '<div class="pano pano'+i+'"><span class="describe" ></span><div class="controls"><a href="#" class="left">&laquo;</a><a href="#" class="right">&raquo;</a></div></div>'
+				
+				
+				swiperList+='<div class="swiper-slide"><img src="'+sphere[i].url+'"><span>'+sphere[i].name+'</span></div>'
+			}
+			
+			$("body").append(html)
+			$(".swiper-wrapper").append(swiperList)
+
+			for(var l=0;l<sphere.length;l++){
+				$(".pano"+l).pano({
+					img: "./img/sphere"+(l+1)+".jpg",
+					fan: "fan"+l,
+					speed: "2"  // 自动滚动速度  数值越大 滚动越快
+				});
+			}
+			
+			// $("#viewText").html(sphere[0].name)
+			toSlide(0)
+			
+			$(".swiper-slide").on("click",function (){
+
+				toSlide($(this).index())
+				
+				$("#fan"+$(this).index()).find(".fan").show();
+				
+			})
+
+			var swiper = new Swiper('.swiper-container', {
+				slidesPerView: 'auto',
+				// slidesOffsetAfter : 10,
+				spaceBetween: 10,
+				freeMode: true
+			});
+
+
+			
+			$(".coordinate").on("click",function (){
+				var idx = $(this).data("idx");
+				swiper.slideTo(idx, 500);
+				toSlide(idx);
+				
+				// $(this).find(".fan").fadeIn()
+				// $(this).siblings().find(".fan").hide()
+
+			})	
+
+
+			$(".btn").on("click",function (){
+				if($("#mapClose").attr("src") == "img/krpano_close.png"){
+					$("#mapClose").attr("src","img/krpano_open.png")
+					$(".map-content").addClass("anima")
+					
+				}else{
+					$("#mapClose").attr("src","img/krpano_close.png")
+					$(".map-content").removeClass("anima")
+				}
+			})
+		})
+
+		var timer = null
+	
+		function toSlide(idx) {
+				// $(".fan").hide();
+
+				$(".spot").removeClass("active")
+				$("#fan"+idx).find(".spot").addClass("active")
+				$("#fan"+idx).find(".fan").show()
+
+				
+				var len = sphere[idx].describe.length
+				var num = 0
+			    clearInterval(timer)
+				var text = ""
+				
+				$(".pano"+idx).find(".describe").html("")
+
+				timer = setInterval(function (){
+					if(num < len){
+						text+=sphere[idx].describe[num]
+						$(".pano"+idx).find(".describe").html(text)
+						num++
+					}else{
+						clearInterval(timer)
+					}
+				},100)
+
+				
+
+
+				$("#viewText").html(sphere[idx].name)
+				$(".pano"+idx).css({"zIndex":22}).fadeIn(600)
+				$(".pano"+idx).siblings(".pano").fadeOut(600).css({"zIndex":21})
+		}
+	</script>
+</body>
+
+</html>
