@@ -1,0 +1,111 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0
+}
+body {
+	font-size: 12px;
+	text-align: center;
+	background: #fafafa;
+}
+img {
+	border: 0
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: 400
+}
+input, button, textarea, select, optgroup, option {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit
+}
+ol, ul {
+	list-style: none
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+caption, th {
+	text-align: left
+}
+sup, sub {
+	font-size: 100%;
+	vertical-align: baseline
+}
+.clearfix {
+	zoom: 1
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+code, kbd, samp, tt, input, button, textarea, select {
+	font-size: 100%
+}
+:link, :visited, ins, a {
+	text-decoration: none
+}
+:focus {
+	outline: 0 none
+}
+a {outline: none;}
+a:active {star:expression(this.onFocus=this.blur());}
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"]>input[type="button"]::-moz-focus-inner {
+border:none;
+padding:0
+}
+*html, *html body {
+	background-attachment: fixed
+}
+body {
+	background-color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: "Microsoft YaHei", Tahoma, arial,  sans-serif;
+	color: #404040;
+	text-align: left
+}
+a {
+	color: #404040
+}
+.f_yh {
+	font-family: 'Microsoft YaHei'
+}
+.f12 {
+	font-size: 12px
+}
+.f14 {
+	font-size: 14px
+}
+.f16 {
+	font-size: 16px
+}
+.f18 {
+	font-size: 18px
+}
+.f20 {
+	font-size: 20px
+}
+.fb {
+	font-weight: 700
+}
+
+.f_f60 {
+	color: #f60 !important
+}
+.fl {
+	float: left
+}
+.fr {
+	float: right
+}
+
+.txt_lt {
+	text-decoration: line-through
+}
+.hide{display:none}

@@ -1,0 +1,215 @@
+html,body {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    background-color: #fff
+}
+.pano {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    cursor: move;
+    position: absolute;
+    z-index:21;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.anim{
+    transition: all .1s 
+}
+.pano0{
+    display: block
+} 
+.pano .controls {
+    position: relative;
+    top: 40%;
+
+    display: none
+}
+.pano .controls a {
+    position: absolute;
+    display: inline-block;
+    text-decoration: none;
+    color: #eee;
+    font-size: 3em;
+    width: 20px;
+    height: 20px;
+}
+.pano .controls a.left {
+    left: 10px;
+}
+.pano .controls a.right {
+    right: 10px;
+}
+.pano.moving .controls a {
+    opacity: 0.4;
+    color: #eee;
+}
+
+
+.swiper-container {
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: 100;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: rgba(0, 0, 0, .4)
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    width: 120px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .map{
+      position: absolute;
+      left:0px;
+      top:0px;
+  }
+  .map-content{
+      position: absolute;
+      left:0px;
+      top:0px;
+      z-index:23;
+      width:260px;
+      
+    transition: all 1s;
+    transform-origin: left top;
+  }
+  .map-content img{
+      display: block;
+      width:260px;
+  }
+  .btn{
+      position: relative;
+      z-index:45;
+  }
+  .anima{
+    transform: scale3d(0.1,.1,1);
+  }
+  .coordinate{
+      width:28px;
+      height: 35px;
+      position: absolute
+  }
+  .coordinate .spot{
+    width: 26px;
+    height: 26px;
+    background: url(../img/blue.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    z-index: 33;
+    /* transform: rotate(50deg); */
+  }
+  .coordinate .spot.active{
+    background: url(../img/red.png) no-repeat;
+    background-size: 100%;
+  }
+
+/*坐标点定位*/
+  .coord1{
+      left:110px;
+      top:73px
+  }
+  .coord2{
+      left:180px;
+      top:30px
+  }
+  .coord3{
+      left:178px;
+      top:66px
+  }
+  .coord4{
+      left:70px;
+      top:58px
+  }
+  .coord5{
+      left:83px;
+      top:21px
+  }
+ .coord6{
+      left:145px;
+      top:11px
+  }
+  #viewText{
+      position: absolute;
+      left: 10px;
+      bottom:105px;
+      color: #fff;
+      z-index: 134;
+      font-size: 16px;
+      text-shadow: 2px 2px 3px #333;
+  }
+  .swiper-slide img{
+      display: block;
+      width: 100%;
+      height: 100%
+  }
+  .swiper-slide span{
+    position: absolute;
+    left:50%;
+    bottom:0;
+    text-shadow: 2px 2px 3px #333;
+    transform: translate3d(-50%,0%,0);
+    font-size: 14px;
+    color: #fff;
+  }
+  .describe{
+      position: absolute;
+  }
+
+  .describe{
+    text-shadow: 2px 2px 3px #333;
+    font-size: 14px;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    border-radius: 10px;
+    right: 5px;
+    top: 6rem;
+	  width: 180px;
+	  display:block;
+  }
+
+  .fan{
+        width:0;
+        height:0;
+        border-radius:30px;
+        border-width:30px;
+        border-style:solid;
+        border-color:#fff transparent transparent transparent;
+        line-height:99em;
+        overflow:hidden;
+        cursor:pointer;
+        display: block;
+        opacity: .8;
+        position: absolute;
+        /* display: none */
+  }
+  .label{
+    color: #fff;
+    position: absolute;
+    left: -35px;
+    top: -15px;
+    text-shadow: 2px 2px 3px #333;
+    width: 100px;
+	  text-align: center;
+  }
